@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsup src",
+    "dev": "tsx --config tsx.config.ts watch src/server.mts",
+    "build": "tsup --config tsup.config.ts",
     "start": "node dist/server.js",
     "studio": "npx prisma studio",
     "migrate": "npx prisma migrate dev",

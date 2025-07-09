@@ -1,4 +1,4 @@
-import { Context } from "./typedefs";
+import { Context } from "./typedefs.mts";
 
 export const Query = {
   me: async (_: unknown, __: unknown, ctx: Context) => {

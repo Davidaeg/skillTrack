@@ -4,21 +4,20 @@ import fastifySwaggerUI from "@fastify/swagger-ui";
 import jwt from "@fastify/jwt";
 import fastify, { FastifyInstance } from "fastify";
 import {
-  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
   ZodTypeProvider,
 } from "fastify-type-provider-zod";
-import { env } from "./env";
+import { env } from "@env";
 import { SwaggerTheme, SwaggerThemeNameEnum } from "swagger-themes";
-import { prismaPlugin } from "./plugins/prisma";
-import { authRoutes } from "./routes/auth";
-import { verifyJWT } from "./utils/auth";
-import { mercurius, MercuriusOptions } from "mercurius";
-import { schema } from "./graphql/schema";
-import { Context } from "./graphql/resolvers/typedefs";
-import { Query } from "./graphql/resolvers/query";
-import { Mutation } from "./graphql/resolvers/mutation";
+import { prismaPlugin } from "@plugins/prisma.mts";
+import { authRoutes } from "@routes/auth.mts";
+import { verifyJWT } from "@utils/auth.mts";
+import { mercurius } from "mercurius";
+import { schema } from "@/graphql/schema.mjs";
+import { Context } from "@/graphql/resolvers/typedefs.mjs";
+import { Query } from "@/graphql/resolvers/query.mjs";
+import { Mutation } from "@/graphql/resolvers/mutation.mjs";
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
 
