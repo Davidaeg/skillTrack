@@ -1,4 +1,4 @@
-import { Context } from "./typedefs.mts";
+import { Context } from "./typedefs.ts";
 
 export const Mutation = {
   createModule: async (

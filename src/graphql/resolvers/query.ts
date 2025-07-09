@@ -1,4 +1,4 @@
-import { Context } from "./typedefs.mts";
+import { Context } from "./typedefs.ts";
 
 export const Query = {
   me: async (_: unknown, __: unknown, ctx: Context) => {
@@ -14,6 +14,9 @@ export const Query = {
   myProgress: async (_: unknown, __: unknown, ctx: Context) => {
     const user = ctx.user;
     if (!user) return [];
-    return ctx.prisma.userModule.findMany({ where: { userId: user.sub } });
+    return ctx.prisma.userModule.findMany({
+      where: { userId: user.sub },
+      include: { module: true },
+    });
   },
 };

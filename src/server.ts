@@ -8,16 +8,16 @@ import {
   validatorCompiler,
   ZodTypeProvider,
 } from "fastify-type-provider-zod";
-import { env } from "@env";
+import { env } from "@/env.ts";
 import { SwaggerTheme, SwaggerThemeNameEnum } from "swagger-themes";
-import { prismaPlugin } from "@plugins/prisma.mts";
-import { authRoutes } from "@routes/auth.mts";
-import { verifyJWT } from "@utils/auth.mts";
+import { prismaPlugin } from "@plugins/prisma.ts";
+import { authRoutes } from "@routes/auth.ts";
+import { verifyJWT } from "@utils/auth.ts";
 import { mercurius } from "mercurius";
-import { schema } from "@/graphql/schema.mjs";
-import { Context } from "@/graphql/resolvers/typedefs.mjs";
-import { Query } from "@/graphql/resolvers/query.mjs";
-import { Mutation } from "@/graphql/resolvers/mutation.mjs";
+import { schema } from "@/graphql/schema.ts";
+import { Context } from "@/graphql/resolvers/typedefs.ts";
+import { Query } from "@/graphql/resolvers/query.ts";
+import { Mutation } from "@/graphql/resolvers/mutation.ts";
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
 

@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/server.mts"],
+  entry: ["src/server.ts"],
   format: ["esm"],
   dts: true,
   splitting: false,
@@ -14,7 +14,7 @@ export default defineConfig({
       "@plugins": "./src/plugins",
       "@utils": "./src/utils",
       "@graphql": "./src/graphql",
-      "@env": "./src/env.mts",
+      "@env": "./src/env.ts",
     };
   },
   outDir: "dist",

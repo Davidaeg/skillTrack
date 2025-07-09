@@ -8,7 +8,7 @@ export default defineConfig({
       "@plugins": "./src/plugins",
       "@utils": "./src/utils",
       "@graphql": "./src/graphql",
-      "@env": "./src/env.mts",
+      "@env": "./src/env.ts",
     },
   },
 });
